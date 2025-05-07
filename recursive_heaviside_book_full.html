@@ -1,0 +1,4681 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Full Book: Recursive Heaviside Structures</title>
+    <script type="text/javascript"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+    <style>
+        body {
+            font-family: Georgia, serif;
+            margin: 3em;
+            line-height: 1.6;
+            background-color: #fefefe;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 1em;
+            white-space: pre-wrap;
+        }
+        nav {
+            background-color: #eee;
+            padding: 1em;
+            margin-bottom: 2em;
+            border-left: 4px solid #bbb;
+        }
+    </style>
+</head>
+<body>
+<h1>Recursive Heaviside Structures: Full Extracted Book</h1>
+
+<nav>
+    <h3>Table of Contents (Preview)</h3>
+    <ul>
+        <li><a href="#intro">1. Introduction</a></li>
+        <li><a href="#model">2. Recursive Model</a></li>
+        <li><a href="#derivatives">3. Derivatives</a></li>
+        <li><a href="#dream">4. Dream & Memory</a></li>
+        <li><a href="#conclusion">5. Conclusion</a></li>
+    </ul>
+</nav>
+
+<pre id="intro">
+Recursive Mind Mo del
+Changso o Shin
+Preamble
+We b egin by de˝ning the recursive function and examining its time and threshold deriva-
+tives.
+At the foundation is the recursive Heaviside sequence function, de˝ned as:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+
+t
++
+˝
+3
+  
+)))
+Here, each Heaviside function includes a sharpness parameter
+N
+i
+, allowing the recursive
+sequence to mo del layered but smo oth thresholds. We then approximate each Heaviside
+step with a sigmoid function, yielding sigmoidal smo othing via:
+H
+N
+i
+(
+t
+) =
+1
+1 +
+e
+
+2
+N
+i
+t
+This mo di˝cation allows for a more realistic representation of memory activation that
+is neither instantaneous nor p erfectly s harp.
+To preserve the correct causal structure of memory within our reversed time mo del, it
+is essential that each memory layer
+u
+i
+(
+t
+)
+is de˝ned in the form
+u
+i
+(
+t
+) = 1
+
+H
+n
+i
+(
+
+t
++
+˝
+i
+(
+  
+))
+;
+where the argument of
+H
+i
+may itself contain nested Heaviside functions from lower
+layers. This form ensures that memory is activated only after the corresp onding event has
+oen when time ˛ows from
++
+1
+to
+
+.
+Any formulation lacking the leading
+1
+
+would imply that the system b egins to
+rememb er future events, violating causality. Hence, this structure is not arbitrary but
+logically and physically required.
+Abstract
+This pap er intro du ces a recursive memory architecture based on nested Heaviside
+step functions, mo deling how cognitive awareness and memory recall are temp orally
+gated and ampli˝ed. We analyze the time and parameter sensitivity of th e recursive
+structure by taking partial derivatives with resp ect to time, threshold values
+˝
+i
+,
+1
+
+
+and sharpness parameters
+N
+i
+. Through worked examples and visualizations, we
+demonstrate how deep er memory layers contribute to surface cognition only wh en
+upp er-layer thresholds are simultaneously active. This mathematical formulation
+o˙ers a novel p ersp ective on mental pro cesses such as deep memory emergence,
+cognitive gating, and emotional amp li˝ cation .
+1 Intro duction
+What do es it mean to rememb er? In human cognition, memory is neither a ˛at archive nor
+a randomly accessed dataset. Rather, it is a layered, thresholded arce
+in form and conditional in access. Certain memories surface only when higher-level
+conditions are met, much like do ors that op en only when prior gates are passed. This
+b ehavior, though well observed in cognitive psychology, remains di˚cult to capture in
+formal mathematical terms.
+In this work, we pres ent a recursive mo del of memory and cognitive activation using
+nested Heaviside step functions. Each layer in the structure represents a thresholded
+cognitive gate, de˝ned by two key parameters: a transition threshold
+˝
+i
+, and a sharpness
+factor
+N
+i
+, which controls how abruptly the transition o ccurs. This recursive formulation
+not only captures the nested logic of attention, emotion, and awareness, but also re˛ects
+the asymmetric nature of re can b e activated forward in time, but rarely
+reconstructed backward from output.
+From a mathematical standp oint, the mo del de˝nes a function:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+  
+H
+N
+n
+(
+
+t
++
+˝
+n
+)))
+where
+H
+N
+i
+is a smo othed Heaviside function with sharpness
+N
+i
+, and
+˝
+i
+is the cognitive
+activation threshold for the
+i
+-th layer. The recursive nature of this construction ensures
+that lower-layer activation is conditional on upp er-layer thresholds b eing 
+prop erty that mirrors delayed memory emergence and context-dep endent recall in human
+exp erience.
+We explore how time (
+t
+), thresholds (
+˝
+i
+), and sharpness (
+N
+i
+) in˛uence output by
+computing and visualizing partial derivatives. Notably, we ˝nd that deep er parameters
+only contribute to the output signal when higher-layer gates are simultaneously active.
+This results in a form of temp oral gating and nested ampli˝cation, wherein inner memories
+remain silent unless su˚ciently cued by current cognitive states.
+Finally, we show that this architecture is fundamentally non-invertible. The output
+u
+(
+t
+)
+cannot b e uniquely decomp osed into its internal the fact that, in
+consciousness, we cannot infer all latent causes of a thought or memory from its app earance
+alone. This structural non-invertibility echo es limitations in b oth cognitive introsp ection
+2
+
+
+and AI interpretability, suggesting deep er insights into the fabric of mental computation.
+2
+Recursive Structure of Thought and Self-Tracking
+and Recursive Identity
+2.1 Recursive Self-Track and Meta-Awareness
+Human consciousness is not only reactive to external stimuli but also re˛exiv p ossesses
+the capacity to observe and evaluate its own mental states. This inward re˛ection gives
+rise to what we refer to as
+self-track
+: a recursive pro cess by which awareness lo ops back
+to monitor and interpret its own activity. In doing so, the mind constructs second-order
+representations of thoughts, memories, and emotions.
+In a recursive cognitive mo del, self-tracking o ccurs when one cognitive threshold is
+de˝ned in terms of another, forming a lo op of mutual dep endency. This structure gives
+rise to what we call a
+recursive identity
+ formal mechanism through which self-reference
+is enco ded within the layers of cognition.
+Such recursive dep endence underlies
+meta-awareness
+, wherein the mind b ecomes b oth
+actor and observer. A threshold resp onds not only to external events but also to its own
+history of activations. This dual role forms the basis for self-conscious thought, enabling
+the emergence of memory-of-awareness and higher-order introsp ection.
+To mo del the propagation of such recursive awareness, we consider how each layer of
+cognition evolves in resp onse not only to external time
+t
+, but also to its internal threshold
+parameter
+˝
+i
+. This dynamic layering can b e formalized through an
+n
+-dimensional advection
+equation, capturing the ˛ow of cognition across recursive thresholds. Imp ortantly, we adopt
+a temp oral framework in which time ˛ows from p ositive to negative in˝nity (
++
+1 ! 
+).
+This reversed orientation captures the retrosp ective character of human awareness: present
+cognition is understo o d as the accumulated result of previously activated thresholds. As
+time pro ceeds backward, the system recursively folds inward, tracing the structure of
+mental formation from surface-level awareness
+u
+1
+(
+t
+)
+down to the deep est layer
+u
+n
+(
+t
+)
+.
+Each recursive function
+u
+i
+(
+t
+)
+evolves not only with resp ect to time
+t
+, but also with
+resp ect to its asso ciated activation threshold
+˝
+i
+, which governs when a cognitive transition
+o ccurs. These transitions are gated by smo othed Heaviside functions, which conditionally
+switch on when threshold criteria are met. The resulting layered dynamics can b e
+formalized by an
+n
+-dimensional advection-typ e equation:
+@ u
+i
+@ t
++
+1
+X
+i
+=
+n
+(
+
+1)
+i
++1
+H
+(
+
+t
++
+˝
+i
+)
+@ u
+i
+@ ˝
+i
+= 0
+(1)
+Here, the term
+@ u
+i
+@ t
+represents the temp oral change in the
+i
+-th cognitive layer, while
+3
+
+
+each summation term re˛ects how sensitivity to threshold shifts
+˝
+i
+is activated conditionally
+via
+H
+(
+
+t
++
+˝
+i
+)
+. The alternating signs
+(
+
+1)
+i
++1
+enco de recursive moindicating
+that awareness is not linearly accumulated but recursively ˝ltered and reweighted as it
+travels through cognitive layers.
+The term
+@ u
+i
+=@ t
+in Eq.
+(1)
+captures the temp oral evolution of the outermost cognitive
+layer, while each term in the summation represents the in˛uence of inner thresholds.
+The alternating sign
+(
+
+1)
+i
++1
+enco des the recursive interplay b etween facilitative and
+suppressive dynamics across lay some layers amplify downstream awareness
+and others inhibit or delay it.
+This advection structure mo dels how memory, attention, and introsp ective feedback
+propagate through nested thresholds, forming a layered framework for recursive identity
+and self-monitoring.
+To make this structure explicit, the cognitive state at each layer is de˝ned as
+u
+i
+(
+t
+) =
+1
+
+h
+i
+(
+t
+)
+, where
+h
+i
+(
+t
+)
+denotes the activated state of the
+i
+-th layer. The recursive comp osition
+of these layers pro ceeds from the deep est layer upward:
+h
+n
+(
+t
+) =
+H
+N
+n
+(
+
+t
++
+˝
+n
+)
+;
+h
+n
+
+1
+(
+t
+) =
+H
+N
+n
+
+1
+(
+
+t
++
+˝
+n
+
+1
+
+h
+n
+(
+t
+))
+;
+h
+n
+
+2
+(
+t
+) =
+H
+N
+n
+
+2
+(
+
+t
++
+˝
+n
+
+2
+
+h
+n
+
+1
+(
+t
+))
+;
+.
+.
+.
+h
+1
+(
+t
+) =
+H
+N
+1
+(
+
+t
++
+˝
+1
+
+h
+2
+(
+t
+))
+;
+u
+1
+(
+t
+) = 1
+
+h
+1
+(
+t
+)
+;
+(2)
+u
+2
+(
+t
+) = 1
+
+h
+2
+(
+t
+)
+;
+u
+3
+(
+t
+) = 1
+
+h
+3
+(
+t
+)
+;
+.
+.
+.
+u
+n
+(
+t
+) = 1
+
+h
+n
+(
+t
+)
+:
+Each function
+h
+i
+(
+t
+)
+de˝nes a thresholded layer of awareness that is recursively mo dulated
+by deep er layers. The outermost layer
+h
+1
+(
+t
+)
+thus encapsulates the entire structure of
+introsp ective as the ˝nal form of the self-track function.
+We denote the total recursive memory structure by
+u
+n
+(
+t
+;
+˝
+1
+; ˝
+2
+; : : : ; ˝
+n
+)
+, which represents
+the strati˝ed cognitive state across multiple thresholds over time. Each term of the form
+H
+(
+
+t
++
+˝
+i
+)
+@ u
+@ ˝
+i
+re˛ects how a deep er thresholded event in˛uences the present awareness
+stream.
+When a threshold recursively dep ends on ore refer to
+this pro cess as
+self-track
+. This transition from linear to recursive dynamics marks the
+4
+
+
+emergence of introsp ective cognition, where the mind not only stores and reacts to events,
+but also b ecomes aware of its own awareness.
+This recursive structure is ess ential for mo deling
+meta-memory
+ memory of
+having rememb provides the foundation for a mathematical theory of sub jective
+consciousness.
+In the next section, we formally intro duce the core mechanism driving this recursive
+awareness: the Recursive Heaviside Function.
+Self-Tracking Structure and Temp oral Windowing.
+The phenomena of temp oral
+lo calization and ampli˝cation, obs erved in the partial derivatives with resp ect to threshold
+parameters
+˝
+i
+and sharpness parameters
+N
+i
+, emerge directly from the recursive structure
+of the self-tracking equation:
+u
+N
+1
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+  
+H
+N
+n
+(
+
+t
++
+˝
+n
+))))
+(3)
+In this formulation, each threshold
+˝
+i
+governs a layer whose activation is conditionally
+dep endent on the activation of the subsequent (deep er) layer. That is, for
+˝
+i
+to in˛uence
+the output, the condition
+
+t
++
+˝
+i
++1
+>
+0
+must b e met, which in turn activates the inner
+Heaviside
+H
+N
+i
++1
+. This recursive dep endency imp oses a
+temporal window
+, where each layer
+can only b ecome active after the deep er layers are already engaged.
+For example, the derivative
+@ u=@ ˝
+i
+includes a multiplicative term like
+H
+N
+i
++1
+(
+
+t
++
+˝
+i
++1
+)
+,
+which functions as a gate or switch. This ensures that the e˙ect of
+˝
+i
+is conditionally
+masked or revealed based on whether the deep er layer
+˝
+i
++1
+has b een activated.
+Such recursive gating not only ensures lo calized temp oral resp onse (activation only
+near the appropriate
+˝
+i
+) but also preserves causal ordering among memory events. These
+are essential features of any architecture aiming to mo del structured memory formation
+and introsp ective dynamics.
+2.2 De˝ning the Recursive Heaviside Function
+At the core of our cognitive mo del lies a recursive function constructed from nested
+Heaviside step functions. This structure mo dels how memories or p erceptions accumulate
+over time, with each layer gated by its own cognitive threshold:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+
+t
++
+˝
+3
+  
+)))
+(4)
+Here, each threshold
+˝
+i
+represents the moment at which a sp eci˝c memory or awarenes s
+state b ecomes activated. The outermost Heaviside function
+H
+N
+1
+only activates if all inner
+thresholds are satis˝ed, enforcing a strict temp oral and logical hierarchy.
+5
+
+
+To facilitate smo oth analysis and di˙erentiation, each Heaviside step function is
+approximated by a sigmoid-like function:
+˙
+N
+(
+x
+) =
+1
+1 + exp(
+
+2
+N x
+)
+(5)
+Replacing each
+H
+N
+i
+(
+x
+)
+with
+˙
+N
+i
+(
+x
+)
+yields a continuous and di˙erentiable recursive
+approximation. This smo othed version preserves the original s tep-like b ehavior while
+enabling analytic exploration of how sensitivity to thresholds and sharpness propagates
+across recursive layers.
+(a) Explicit Nested Form
+u
+(
+t
+) = 1
+
+1
+1 + exp
+0
+@
+
+2
+N
+1
+0
+@
+
+t
++
+˝
+1
+
+1
+1+exp
+
+
+2
+N
+2
+
+
+t
++
+˝
+2
+
+1
+1+exp(
+
+2
+N
+3
+(
+
+t
++
+˝
+3
+
+))
+
+1
+A
+1
+A
+(6)
+(a) Explicit Nested Form
+u
+(
+t
+) = 1
+
+1
+1 + exp
+0
+@
+
+2
+N
+1
+0
+@
+
+t
++
+˝
+1
+
+1
+1+exp
+
+
+2
+N
+2
+
+
+t
++
+˝
+2
+
+1
+1+exp(
+
+2
+N
+3
+(
+
+t
++
+˝
+3
+
+))
+
+1
+A
+1
+A
+(7)
+(b) Recursive Function De˝nition
+h
+n
+(
+t
+) =
+1
+1 + exp (
+
+2
+N
+n
+(
+
+t
++
+˝
+n
+
+h
+n
++1
+(
+t
+)))
+u
+i
+(
+t
+) = 1
+
+h
+i
+(
+t
+)
+; i
+= 1
+; :::::; n
+(8)
+This smo othed recursive sigmoid representation ensures continuity and di˙erentiability,
+allowing b oth analytical and numerical analysis. As
+N
+i
+! 1
+, the sigmoid functions
+converge to ideal step functions, recovering the original nes ted Heaviside form.
+This recursive formulation mo dels layered cognition as follows:
+‹
+The innermost
+˝
+n
+corresp onds to a base-level stimulus or memory.
+‹
+˝
+n
+
+1
+enco des a conditional resp onse to that base layer.
+‹
+Higher layers represent interpretations, re˛ective awareness, and cognitive control.
+Each activation is thus contingent up on the successful activation of deep er layers.
+The structure captures cognitive phenomena such as dep endency, temp oral delay, and
+emergent awareness.
+While the recursive function app ears analytically de˝ned, it is fundamentally
+non-
+invertible
+in the practical sense. In theory, if each sharpness parameter
+N
+i
+is ˝nite and
+6
+
+
+known, the function
+u
+(
+t
+)
+can b e expanded into an in˝nite Taylor series and, in principle,
+reconstructed from its derivatives . However, this reconstruction would require in˝nite
+precision and complete knowledge of all thresholds and that are
+neither physically realizable nor cognitively plausible.
+Thus, even though formal invertibility exists in a mathematical sense, the function
+remains e˙ectively irreversible. This re˛ects the asymmetry of lived exp erience: past
+cognitive layers in˛uence the present, but cannot b e uniquely recovered once integrated
+into the recursive s tructure.
+In the following section, we analyze how derivatives of this resp ect
+to b oth time and cognitive del memory recall, forgetting, and emotional
+resonance.
+3 Derivatives and Cognitive Dynamics
+To understand how cognition evolves over time and interacts with past exp eriences, we
+examine the derivatives of the recursive Heaviside function. Three key typ es of derivatives
+provide insight into the mental pro cess:
+3.1 Time Derivative
+@ u=@ t
+This re˛ects the momentary change in cognitive awareness. It captures when a certain
+threshold is crossed in real time, triggering a sharp cognitive event. The resulting
+expressions often involve Dirac delta functions and their comp ositions.
+h
+i
+(
+t
+) =
+H
+N
+i
+(
+
+t
++
+˝
+i
+)
+(9)
+Each function
+h
+i
+(
+t
+)
+is a smo othed Heaviside step function with sharpness
+N
+i
+and
+threshold
+˝
+i
+, activated as time
+t
+decreases past
+˝
+i
+. The use of
+
+t
++
+˝
+i
+re˛ects the
+retrosp ective nature of awareness, where the present integrates the e˙ect of prior events.
+As shown in Figure 1, the time derivative reveals moments of sudden awareness
+activation, tightly lo calized near each threshold
+˝
+i
+.
+3.2 Threshold Derivatives
+@ u=@ ˝
+i
+(Gating E˙ects)
+The threshold derivative
+@ u=@ ˝
+i
+quanti˝es how the timing of a cognitive event a˙ects
+the recursive function
+u
+(
+t
+)
+. Since each threshold
+˝
+i
+de˝nes the onset of a particular
+mental layer, small changes in
+˝
+i
+mo dulate whether that layer activates early or late in
+the recursive pro cess.
+7
+
+
+Figure 1: Partial derivatives of the recursive Heaviside memory mo del. The ˝ve solid
+curves represent the smo othed Heaviside comp onents
+h
+1
+(
+t
+)
+to
+h
+5
+(
+t
+)
+, each de˝ned as
+h
+i
+(
+t
+) =
+H
+N
+i
+(
+
+t
++
+˝
+i
+)
+. The das hed black curve represents the total time derivative
+@ u=@ t
+,
+showing sharp p eaks at each
+˝
+i
+and illustrating the temp oral lo calization of memory
+events .
+In a 3-layer recursive Heaviside function:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+
+t
++
+˝
+3
+)))
+The derivative with resp ect to
+˝
+3
+ innermostis given by:
+@ u
+@ ˝
+3
+(
+t
+) =
+
+
+(
+A
+1
+)
+
+˝
+1
+
+
+(
+A
+2
+)
+
+˝
+2
+
+
+(
+A
+3
+)
+(10)
+where:
+A
+3
+=
+
+t
++
+˝
+3
+; A
+2
+=
+
+t
++
+˝
+2
+H
+N
+3
+(
+A
+3
+)
+; A
+1
+=
+
+t
++
+˝
+1
+H
+N
+2
+(
+A
+2
+)
+This expression shows that the e˙ect of
+˝
+3
+is gated by the higher-level thresholds
+˝
+1
+and
+˝
+2
+. The delta functions are only active when all inner layers are 
+when the nested Heaviside conditions are simultaneously satis˝ed. This multiplicative
+structure mo dels **temp oral gating**: sensitivity to deep events is revealed only through
+the recursive op ening of upp er layers.
+8
+
+
+Figure 2: Partial derivatives of the recursive Heaviside comp onents. The plot shows
+@ h
+1
+=@ ˝
+1
+,
+@ u=@ ˝
+2
+,
+@ u=@ ˝
+3
+,
+@ u=@ ˝
+4
+, and
+@ h
+1
+=@ ˝
+5
+as well as the time derivative
+@ u=@ t
+(dashed line). Each p eak corresp onds to a transition p oint
+˝
+i
+, and the magnitude re˛ects
+the sharpness
+N
+i
+of the smo othed Heaviside step function.
+3.3 Threshold Derivative**
+@ u=@ ˝
+i
+In order to analyze the sensitivity of the recursive Heaviside-based memory comp onents to
+their resp ective threshold parameters
+˝
+i
+, we computed several partial derivatives. Figure 2
+presents the results, where the curve lab eled
+@ h
+1
+=@ ˝
+1
+represents the derivative of the
+˝rst Heaviside comp onent
+h
+1
+(
+t
+) =
+H
+N
+1
+(
+t
+
+˝
+1
+)
+with resp ect to its own threshold. This
+derivative exhibits a smo oth p eak centered around
+t
+=
+˝
+1
+, and its shap e re˛ects the
+sharpness parameter
+N
+1
+.
+Additionally, the ˝gure shows the partial derivatives
+@ u=@ ˝
+2
+,
+@ u=@ ˝
+3
+, and
+@ u=@ ˝
+4
+,
+which measure how the combined function
+u
+(
+t
+) =
+X
+i
+h
+i
+(
+t
+)
+changes in resp onse to variations
+in the res p ective thresholds. Although the function
+h
+1
+(
+t
+)
+do es not directly dep end on
+˝
+5
+,
+we include
+@ h
+1
+=@ ˝
+5
+to illustrate the lack of in˛uence from unrelated thresholds.
+For comparison, the sixth curve (dashed) in the ˝gure corresp onds to the time derivative
+@ u=@ t
+, which features multiple sharp p eaks at each
+˝
+i
+. This derivative captures the
+instantaneous rate of change of the comp osite function
+u
+(
+t
+)
+and re˛ects the temp oral
+lo calization induced by the smo othed step transitions.
+* This describ es how sensitive the entire mental structure is to the timing of a particular
+memory or s timulus. * It represents the in˛uence of mo difying a single cognitive threshold.
+3.4 Sharpness Derivative
+@ u=@ N
+i
+In addition to time and threshold derivatives, we examine how the cognitive structure
+resp onds to variations in the sharpness parameter
+N
+i
+, which controls the steepness of each
+9
+
+
+smo othed Heaviside transition. To illustrate this e˙ect, we fo cus on the partial derivative
+of the recursive function with resp ect to
+N
+3
+in a three-layer structure:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+
+t
++
+˝
+3
+)))
+:
+(11)
+The innermost comp onent
+H
+N
+3
+(
+
+t
++
+˝
+3
+)
+is de˝ned as:
+H
+N
+3
+(
+
+t
++
+˝
+3
+) =
+1
+1 + exp (
+
+2
+N
+3
+(
+
+t
++
+˝
+3
+))
+;
+(12)
+whose derivative with resp ect to
+N
+3
+b ecomes:
+@
+@ N
+3
+H
+N
+3
+(
+
+t
++
+˝
+3
+) =
+(
+t
+
+˝
+3
+)
+
+exp (2
+N
+3
+(
+t
+
+˝
+3
+))
+(1 + exp (2
+N
+3
+(
+t
+
+˝
+3
+)))
+2
+:
+(13)
+This function p eaks sharply near
+t
+=
+˝
+3
+, and vanishes rapidly as time moves away
+from the threshold. Under our temp oral mo del in which time ˛ows from future to past
+(
+t
+! 
+), this derivative grows increasingly in˛uential as the system approaches
+˝
+3
+from
+the future side. Thus, even mo dest changes in sharpness can generate ampli˝ed resp onses
+when the recursive structure is near cognitive activation.
+When this sharpness derivative is emb edded into the recursive hierarchy, the full
+derivative of
+u
+(
+t
+)
+with resp ect to
+N
+3
+is given by:
+@ u
+@ N
+3
+=
+
+N
+1
+(
+A
+)
+
+˝
+1
+
+N
+2
+(
+B
+)
+
+˝
+2
+
+2(
+t
+
+˝
+3
+)
+(
+e
+N
+3
+(
+t
+
+˝
+3
+)
++
+e
+
+N
+3
+(
+t
+
+˝
+3
+)
+)
+2
+;
+(14)
+where the intermediate arguments are de˝ned as:
+A
+=
+
+t
++
+˝
+1
+H
+N
+2
+(
+B
+)
+; B
+=
+
+t
++
+˝
+2
+H
+N
+3
+(
+
+t
++
+˝
+3
+)
+:
+(15)
+This result illustrates that deeply nested sharpness parameters can still in˛uence the
+output through recursive activation pathways. The lo calized resp onse around
+˝
+3
+re˛ects
+the structure's sensitivity to precision mo dulation, esp ecially in the context of emotion,
+trauma, or delayed cognitive recall.
+Worke d Example: Ampli˝cation and Temp oral Gating in a 3-
+Layer Structure
+To illustrate the role of nested sharpness and threshold parameters in recursive memory
+mo dels, we consider a 3-layer function:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+
+t
++
+˝
+3
+)))
+(16)
+10
+
+
+We set:
+˝
+1
+= 1
+:
+0
+; ˝
+2
+= 1
+:
+5
+; ˝
+3
+= 2
+:
+0
+; N
+1
+= 1
+:
+0
+; N
+2
+= 0
+:
+3
+; N
+3
+= 2
+:
+0
+(17)
+Let the recursive activation arguments b e de˝ned as:
+A
+3
+=
+
+t
++
+˝
+3
+; A
+2
+=
+
+t
++
+˝
+2
+H
+N
+3
+(
+A
+3
+)
+; A
+1
+=
+
+t
++
+˝
+1
+H
+N
+2
+(
+A
+2
+)
+(18)
+Derivative with res p ect to the sharpness parameter
+N
+3
+:
+@ u
+@ N
+3
+(
+t
+) =
+
+
+(
+A
+1
+)
+
+˝
+1
+
+
+(
+A
+2
+)
+
+˝
+2
+
+@ H
+N
+3
+(
+A
+3
+)
+@ N
+3
+
+
+(
+A
+3
+)
+(19)
+Derivative with resp ect to the threshold parameter
+˝
+3
+:
+@ u
+@ ˝
+3
+(
+t
+) =
+
+
+(
+A
+1
+)
+
+˝
+1
+
+
+(
+A
+2
+)
+
+˝
+2
+
+
+(
+A
+3
+)
+(20)
+These two expressions demonstrate distinct b ehaviors: - The term
+@ u=@ N
+3
+includes
+b oth sensitivity and ampli˝cation e˙ects due to nesting. - The term
+@ u=@ ˝
+3
+re˛ects sharp
+lo calization near the innermost threshold.
+Worke d Example: Ampli˝cation and Temp oral Gating in a 3-
+Layer Structure
+To illustrate the role of nested sharpness and threshold parameters in recursive memory
+mo dels, we consider a 3-layer function:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+
+t
++
+˝
+3
+)))
+(21)
+We set:
+˝
+1
+= 1
+:
+0
+; ˝
+2
+= 1
+:
+5
+; ˝
+3
+= 2
+:
+0
+; N
+1
+= 1
+:
+0
+; N
+2
+= 0
+:
+3
+; N
+3
+= 2
+:
+0
+(22)
+Let the recursive activation arguments b e de˝ned as:
+A
+3
+=
+
+t
++
+˝
+3
+; A
+2
+=
+
+t
++
+˝
+2
+H
+N
+3
+(
+A
+3
+)
+; A
+1
+=
+
+t
++
+˝
+1
+H
+N
+2
+(
+A
+2
+)
+(23)
+Derivative with resp ect to the sharpness parameter
+N
+3
+:
+@ u
+@ N
+3
+(
+t
+) =
+
+
+(
+A
+1
+)
+
+˝
+1
+
+
+(
+A
+2
+)
+
+˝
+2
+
+@ H
+N
+3
+(
+A
+3
+)
+@ N
+3
+
+
+(
+A
+3
+)
+(24)
+11
+
+
+Derivative with resp ect to the threshold parameter
+˝
+3
+:
+@ u
+@ ˝
+3
+(
+t
+) =
+
+
+(
+A
+1
+)
+
+˝
+1
+
+
+(
+A
+2
+)
+
+˝
+2
+
+
+(
+A
+3
+)
+(25)
+These two expressions demonstrate distinct b ehaviors: - The term
+@ u=@ N
+3
+includes
+b oth sensitivity and ampli˝cation e˙ects due to nesting. - The term
+@ u=@ ˝
+3
+re˛ects sharp
+lo calization near the innermost threshold.
+Figure 3: Ampli˝cation e˙ects in a 3-layer recursive memory mo del with parameters
+˝
+1
+= 1
+:
+0
+,
+˝
+2
+= 1
+:
+5
+,
+˝
+3
+= 2
+:
+0
+, and
+N
+1
+= 1
+:
+0
+,
+N
+2
+= 0
+:
+3
+,
+N
+3
+= 2
+:
+0
+. The dotted black curve
+shows
+@ H
+N
+3
+=@ N
+3
+, the dash-dotted green curve shows the ampli˝cation factor, the solid
+blue curve is
+@ u=@ N
+3
+, and the dashed red curve is
+@ u=@ ˝
+3
+.
+As shown in Figure 3, the recursive architecture ampli˝es the in˛uence of deep-layer
+parameters such as
+N
+3
+only when upp er-layer thresholds
+˝
+1
+and
+˝
+2
+are also activated. In
+contrast, the threshold sensitivity
+@ u=@ ˝
+3
+remains temp orally lo calized, demonstrating
+strong gating characteristics. The partial derivative of the recursive function with resp ect
+to
+N
+i
+in a n layered structure is given C.
+3.5 Cross-Threshold Derivative s
+@
+2
+u=@ ˝
+i
+@ ˝
+j
+While mixed derivatives with resp ect to time and threshold describ e how real-time
+awareness resp onds to latent memories, the second-order derivatives with resp ect to two
+threshold 
+@
+2
+u=@ ˝
+i
+@ ˝
+j
+ interactions b etween distinct cognitive layers.
+These terms quantify how a small shift in one memory threshold mo dulates the sensitivity
+12
+
+
+of another, and are essential in mo deling emotionally or contextually coupled memories.
+Such cross-threshold derivatives b ecome particularly meaningful when the recursive
+structure includes rep eated or closely spaced thresholds:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+
+t
++
+˝
+3
+)))
+:
+(26)
+In this case, the derivative
+@
+2
+u=@ ˝
+2
+@ ˝
+3
+includes:
+@
+2
+u
+@ ˝
+2
+@ ˝
+3
+=
+
+w el N
+1
+(
+A
+)
+
+˝
+1
+@
+@ ˝
+2
+"
+
+N
+2
+(
+B
+)
+
+˝
+2
+@ H
+N
+3
+(
+
+t
++
+˝
+3
+)
+@ ˝
+3
+#
+;
+(27)
+with:
+A
+=
+
+t
++
+˝
+1
+H
+N
+2
+(
+B
+)
+; B
+=
+
+t
++
+˝
+2
+H
+N
+3
+(
+
+t
++
+˝
+3
+)
+:
+(28)
+The resulting expressions involve pro ducts of delta functions and their derivatives.
+These terms are sharply lo calized in time, and they express how the shift of one memory
+layer (e.g.,
+˝
+3
+) in˛uences another (e.g.,
+˝
+2
+). When b oth thresholds are close or rep eated,
+the interaction is corresp onds to linked or comp ounded memory e˙ects,
+such as emotionally charged asso ciative recall or trauma chaining.
+Moreover, the app earance of these cross-threshold terms supp orts the interpretation
+that recursive cognition is not simply a collection of indep endent activations, but a deeply
+entangled structure with nontrivial second-order dep endencies across layers.
+3.6 Mixed Derivative as a Measure of Trauma Ampli˝cation
+In the recursive Heaviside framework, the sharpness parameter
+N
+i
+controls the steepness
+of memory enco ding, while the threshold
+˝
+j
+indicates the temp oral p osition of a cognitive
+event. Individually, their partial derivatives describ e the sensitivity of the mental p otential
+u
+(
+t
+)
+to changes in shap e or time. However, the **mixed partial derivative**,
+@
+2
+u
+@ ˝
+j
+@ N
+i
+;
+provides a deep er interpretation: it captures **how much a traumatic memory b ecomes
+ampli˝ed** due to the interaction b etween its timing and sharpness.
+When this mixed derivative is large in magnitude, it signi˝es that even small changes
+in the event timing
+˝
+j
+, when combined with ˛uctuations in the sharpness
+N
+i
+, result in
+signi˝cant changes in the mental p otential ˝eld. I n other words, the cognitive system reacts
+disprop the trauma's in˛uence far b eyond its original b oundaries.
+This quantity can b e seen as a formal indicator of **unstable or unresolved trauma**.
+It may help identify which events continue to exert excessive in˛uence due to recursive
+reactivation and insu˚cient resolution. Therap eutically, minimizing the magnitude of this
+13
+
+
+mixed derivative could represent a pathway toward cognitive stabilization, containment,
+or integration.
+3.7 Precursor Signal in Early Recursive Layers
+Certain cognitive phenomena involve subtle sensations or early neural resp onses that
+precede conscious awareness. These are often describ ed b ehaviorally as unexplained
+alertness or intuition. Within our recursive Heaviside framework, such e˙ects can b e
+interpreted as
+precursor signals
+ activations in earlier layers that o ccur even
+b efore the full recursive structure has b een engaged.
+Consider the function:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+
+t
++
+˝
+3
+  
+)))
+(29)
+The partial derivative with res p ect to the second threshold is given by:
+@ u
+@ ˝
+2
+=
+
+
+N
+1
+(
+A
+1
+)
+
+˝
+1
+
+N
+2
+(
+A
+2
+)
+
+H
+N
+3
+(
+
+)
+(30)
+Here,
+A
+1
+=
+
+t
++
+˝
+1
+H
+N
+2
+(
+  
+)
+and
+A
+2
+=
+
+t
++
+˝
+2
+H
+N
+3
+(
+  
+)
+. This expression reveals that
+even if the innermost layer (e.g., at
+˝
+3
+) has not yet b een activ
+H
+N
+3
+remains
+b elow outer layers can still contribute a nonzero derivative. The presence of
+
+N
+1
+and
+
+N
+2
+, mo dulated by the recursive co e˚cients like
+˝
+1
+, pro duces partial activations b efore
+full memory formation.
+Thus, the mo del predicts lo calized sensitivity or signal emergence at early stages, despite
+incomplete recursion. We interpret this b ehavior as a
+precursor signal
+ mathematical
+representation of early cognitive reactivity to latent or unrecognized stimuli.
+This signal may underlie intuitive judgments or unconscious alertness, esp ecially in
+contexts where the full structure of exp erience is not yet consciously assembled but the
+brain is already reacting subtly to p otential input. It also provides a p ossible mechanistic
+interpretation of anecdotal "gut feelings" or the psychological construct of anticipatory
+awareness.
+4 Dreams and Residual Terms of Thought
+The recurs ive structure of cognition not only accounts for conscious resp onses but also
+explains unconscious phenomena such as dreams. From a mathematical p ersp ective,
+dreams can b e interpreted as
+residual terms
+anishing comp onents that emerge when
+recursive layers fail to fully cancel or resolve within the recursive Heaviside formulation.
+These residuals typically arise under conditions where:
+14
+
+
+‹
+A memory threshold
+˝
+i
+has ambiguous or weak activation due to a small sharpness
+parameter
+N
+i
+.
+‹
+Mixed derivatives such as
+@
+2
+u=@ t@ ˝
+i
+yield non-zero values even in the absence of
+external stimuli.
+‹
+Recursive cancellation is incomplete, allowing unstructured fragments to p ersist.
+In this framework, dreams are not interpreted as random or meaningless. Rather, they
+are structured spillovts of the recursive pro cess that remain unresolved in
+waking thought. The deep er the recursion and the more varied the threshold values, the
+more complex and symb olic the resulting dream exp erience.
+Furthermore, during sleep, inhibitory control over higher-threshold layers may b e
+reduced, enabling latentypically suppressed by conscious 
+emerge. These structures often defy linear narrative logic and arise from unresolved
+recursive ˛ows op erating b eneath conscious awareness.
+In more extreme cases, such as trauma, when a particular threshold
+˝
+i
+is rep eated with
+high sharpness, these residuals may dominate the mental structure, resulting in recurring
+dream patterns or involuntary ˛ashbacks. Hence, dreams re˛ect b oth the layered memory
+architecture and the system's inability to fully resolve recursive cognition in the abs ence
+of external feedback.
+A formal derivation of these residual terms, based on the time derivative of a three-layer
+recursive Heavis ide function, is provided in App endix B. There, we show how incomplete
+cancellations at various thresholds mathematically give rise to the structure and timing of
+dream events.
+Trauma and the Evolution of Sharpness
+N
+i
+In the recursive Heaviside mo del, trauma is not de˝ned solely by the intensity of a
+single event, but by the way that event recursively imprints itself across time. Each
+threshold
+˝
+i
+is asso ciated with a sharpness parameter
+N
+i
+, which controls how abruptly
+the Heaviside function transitions. While
+N
+i
+was originally treated as a static parameter,
+we now interpret it as an evolving quantithanging e˙ectively over time due to the
+accumulation and reinforcement of cognitive injury, though not necessarily de˝ned as an
+explicit function
+N
+i
+(
+t
+)
+.
+Initial Enco ding
+Immediately following a highly emotional or painful exp erience, the s harpness
+N
+i
+may b e
+large. This pro duces a s teep acute awareness or sho ck. Such sharp
+resp onses may saturate quickly and b e suppressed in the short term.
+15
+
+
+Recursive Reinforcement and Decay
+As the recursive structure of cognition rep eatedly references the same threshold
+˝
+i
+, the
+e˙ective sharpness
+N
+i
+b egins to decrease. This gradual reduction re˛ects:
+‹
+Accumulated recursive layering without resolution.
+‹
+Rep eated sub conscious activation through dreams, triggers, or internal lo ops.
+‹
+Loss of logical containment, leading to broader temp oral spread.
+Over time, a once-sharp resp onse b ecomes a wide, lingering slop e in the recursive
+cognitive ˝eld. This is precisely what makes trauma p ersistent: it is no longer ab out
+a sharp edge, but ab out
+a long unresolved presence
+within the recursive memory
+structure.
+Implications for Healing
+This evolving interpretation of
+N
+i
+o˙ers a new target for therapy. Rather than attempting
+to "desensitize" a sharp reaction, treatment may instead aim to:
+‹
+Prevent further decay of
+N
+i
+(i.e., stop widening of memory activation).
+‹
+Intro duce recursive interference layers that counteract the uncontrolled spread.
+‹
+Reassign temp oral b oundaries to contain the recursive feedback.
+Thus, trauma is not simply enco ded in the strength of emotion, but in the
+evolution
+of sharpness over time
+. What b egins as a sharp wound may, if left unresolved, ˛atten
+into a wide, irreversible gro ove in the cognitive mo deled by a
+decreasing
+N
+i
+that expands the temp oral fo otprint of su˙ering.
+Mixed Derivative as a Measure of Trauma Ampli˝cation
+In this context, the mixed partial derivative of the cognitive p otential ˝eld
+u
+(
+t
+)
+with
+resp ect to b oth the event threshold
+˝
+j
+and the sharpness parameter
+N
+i
+,
+@
+2
+u
+@ ˝
+j
+@ N
+i
+;
+(31)
+emerges as a mathematical indicator of trauma ampli˝cation. This term captures how
+much a traumatic event's cognitive impact is intensi˝ed due to the combined e˙ects of
+timing and enco ding sharpness.
+16
+
+
+When this mixed derivative is large in magnitude, it implies that small changes in the
+timing of the event
+˝
+j
+, when coupled with shifts in sharpness
+N
+i
+, lead to disprop ortion-
+ately large changes in mental p otential. This re˛ects a form of emotional instability or
+hyp ersensitivit the trauma resonates deeply within the recursive memory ˝eld.
+Therap eutically, this o˙ers a way to diagnose the most ampli˝ed and unstable memory
+layers. High values of
+@
+2
+u=@ ˝
+j
+@ N
+i
+may indicate unresolved cognitive lo ops or layers where
+trauma is p ersistently reactivated. Treatment might aim to reduce this mixed derivative,
+thereby damp ening the over-ampli˝ed feedback and stabilizing the system.
+5 Free Will, Emotion, and Individuality
+The mathematical framework of recursive cognition naturally gives rise to deep er questions
+surrounding p ers onal agency, emotional dynamics, and the uniqueness of individual minds.
+In this chapter, we explore how recursive structures account for emotional mo dulation,
+evolving identity, and the p otential emergence of free will within an otherwise deterministic
+architecture.
+6 Mo dulation and Evolution of Sharpness
+The sharpness parameter
+N
+i
+, which governs how abruptly each cognitive thres hold
+˝
+i
+is
+activated, is not ˝xed. Rather, it evolves dynamically in resp onse to internalh
+as mo o d, fatigue, and hormonals well as external environmental context.
+Emotional states play a key role in mo dulating the steepness of transitions b etween
+recursive cognitive layers:
+‹
+During the initial phase of an intense exph as fear, sho ck, or 
+N
+i
+tends to increase, pro ducing steep, high-sensitivity transitions that enco de strong,
+lo calized impressions.
+‹
+Over time, particularly in the context of unresolved trauma or recurrent internal
+reactivation,
+N
+i
+may gradually decay. This results in broader, more di˙use activations
+that p ersist within the recursive structure.
+This transformation from high to low sharpness generates a paradoxical outcome: what
+b egins as a sharply de˝ned emotional resp onse may evolve into a wide, lingering ˝eld
+of cognitive residue. Such recursive di˙usion helps explain why emotionally signi˝cant
+even ecially traumatice in the form of ˛ashbacks, p ersistent mo o d
+states, or dream elements long after the original event has passed.
+Imp ortantly, recursive feedback enables emotional states to in˛uence not only immedi-
+ate cognition but also the thresholds and sensitivities of future cognitive layers. In this
+17
+
+
+formulation, emotion is not merely a transient input but acts as a recursive mo di˝er of
+the overall cognitive arc the s harpness parameters that shap e how
+future events are enco ded and recalled.
+7 Recursive Plasticity and Adaptive Identity
+Each individual's recursive structure evolves uniquely over time. Exp eriences reshap e
+threshold values
+˝
+i
+, sharpness parameters
+N
+i
+, and the depth or order of nesting within the
+cognitive system. This ongoing adaptation gives ris e to a unique recursive identit
+internal con˝guration that cannot b e copied, repro duced, or externally replicated.
+‹
+Even when two individuals undergo similar life events, their recursive enco dings
+di˙er in timing, sharpness decay, and resp onse layering.
+‹
+These di˙erences in recursive architecture give rise to individualized memory dy-
+namics, p erceptual tendencies, and emotional patterns.
+This mo del helps explain the irreducibility of cons ciousness: it is not only sub jectively
+private but also formally non-identical across individuals . Each recursive structure
+constitutes a singular, historically contingent pathway through layered cognitive time.
+8
+The Possibility of Free Will in a Recursive Frame-
+work
+If free will exis ts , it may not require the violation of deterministic laws but could emerge
+as a prop erty of recursive depth, self-reference, and architectural variability. While
+each individual cognitive transition may follow deterministic rules, the recurs ive system
+intro duces:
+‹
+Internal feedback lo ops capable of mo dulating or overriding immediate external
+inputs.
+‹
+Temp oral delays and long-range dep endencies that enable delib eration and re˛ective
+pause.
+‹
+Flexible memory access, where the mind can selectively de˝ne the b eginning and
+end p oints of introsp ective recall.
+These features supp ort decision-making pro cesses that are neither random nor exter-
+nally imp osed, but historically informed, self-organized, and recursively mo dulated. In
+18
+
+
+this framework, free will b ecomes a form of recursive autonom capacity to reshap e
+one's current state by drawing from deeply structured layers of past cognition.
+In the ˝nal chapter, we synthesize these mathematical and philosophical insights
+and prop ose new directions for mo deling the mind, treating trauma, and understanding
+individuality within a recursive systems paradigm.
+9
+Death and the Disapp earance of Cognitive Deriva-
+tives
+9.1 Temp oral Role of
+˝
+n
+and
+˝
+1
+In our recursive memory architecture, we de˝ne the deep est threshold
+˝
+n
+as the mo-
+ment of birth, while the outermost threshold
+˝
+1
+corresp onds to the current moment of
+aware ultimately, the moment of death.
+The recursive cognitive p otential is given by:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+  
+H
+N
+n
+(
+
+t
++
+˝
+n
+))))
+(32)
+9.2 Vanishing of Derivatives at Death
+All partial derivatives of the mental p otenhether with resp ect to time
+t
+, threshold
+parameters
+˝
+i
+, or sharpness parameters
+N
+i
+ end recursively on
+˝
+1
+. This includes:
+‹
+@ u
+@ ˝
+i
+‹
+@ u
+@ N
+i
+Each of these expressions contains multiplicative factors involving the Heaviside or
+delta function centered at
+A
+1
+=
+
+t
++
+˝
+1
+H
+(
+  
+)
+. When
+˝
+1
+!
+0
+, this activation term
+collapses, and all such derivatives vanish:
+@ u
+@ ˝
+1
+(
+t
+)
+!
+0
+;
+@ u
+@ N
+i
+(
+t
+)
+!
+0
+as
+˝
+1
+!
+0
+(33)
+9.3 Cognitive Dissolution at the Moment of Death
+This mathematical collapse corresp onds to a complete loss of awareness, memory, and
+introsp ection at the time of death. No derivative remains to enco de sensitivity, no threshold
+remains active, and the recursive architecture is annihilated.
+19
+
+
+The recursive mind p otential
+u
+(
+t
+)
+, which previously contained layer-by-layer enco ded
+exp erience, now returns to zero p otential:
+u
+(
+t
+)
+!
+0
+when
+˝
+1
+= 0
+9.4 Implication: Death as a Total Derivative Annihilation
+In this framework, **death is not merely a biological endp oin is the moment at which
+the entire chain of mental causality is mathematically extinguished. All cognitive pathways
+involving di˙erentiation, memory access, and recursive self-reference are disconnected.
+The soul, mo deled as a nested recursive function, b ecomes undetectable. This allows
+for a reset of the memory structure in future reincarnation, which b egins again from a
+newly assigned birth time
+˝
+0
+n
+, indep endent from previous
+˝
+n
+.
+Recursive Derivative Decay at the Moment of Death
+We de˝ne a general
+n
+-layer recursive Heaviside p otential function
+u
+(
+t
+)
+that mo dels cognitive
+presence as:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+  
+H
+N
+n
+(
+
+t
++
+˝
+n
+)
+  
+)))
+where each
+H
+N
+i
+is a smo oth approximation of the Heaviside step function with sharpness
+N
+i
+, and each threshold
+˝
+i
+denotes a signi˝cant moment in the life of a cognitive b eing.
+Taking the partial derivative with resp ect to time, we obtain:
+@ u
+@ t
+=
+
+
+N
+1
+(
+x
+1
+)
+
+P
+1
+where
+x
+1
+=
+
+t
++
+˝
+1
+H
+N
+2
+(
+x
+2
+)
+,
+x
+2
+=
+
+t
++
+˝
+2
+H
+N
+3
+(
+x
+3
+)
+, ...,
+x
+n
+=
+
+t
++
+˝
+n
+, and the nested
+derivative pro duct
+P
+1
+is recursively given by:
+P
+1
+= (
+
+1
+
+˝
+1
+
+N
+2
+(
+x
+2
+)
+
+(
+
+1
+
+˝
+2
+
+N
+3
+(
+x
+3
+)
+
+(
+  
+(
+
+1
+
+˝
+n
+
+1
+
+N
+n
+(
+x
+n
+))
+  
+)))
+At the critical moment of death, we assume
+t
+=
+˝
+1
+= 0
+. Then
+x
+1
+= 0
+, leading to a
+nonzero p eak in
+
+N
+1
+(
+x
+1
+)
+, while all other
+x
+i
+<
+0
+and their corresp onding
+
+N
+i
+(
+x
+i
+)
+ˇ
+0
++
+due
+to decay of earlier memories.
+Therefore:
+@ u
+@ t
+
+
+
+
+
+t
+=
+˝
+1
+=0
+=
+
+
+N
+1
+(0)
+
+(1 +
+
+2
++
+
+3
++
+  
++
+
+n
+)
+where each
+
+i
+is an exp onentially decaying remnant of earlier memory layers.
+20
+
+
+This structure reveals that although the cognitive p otential
+u
+(
+t
+)
+smo othly decays
+to zero near
+t
+= 0
+, its time derivative remains nonzero for an instan that
+the pro cess of forgetting is itself alive and dynamic. This momentary derivative can b e
+interpreted as the ˝nal vibration of the soul. As time progresses b eyond death (
+t >
+0
+),
+all such derivatives vanish:
+lim
+t
+!
+0
++
+@ u
+@ t
+= 0
+;
+lim
+t
+!
+0
++
+@ u
+@ ˝
+i
+= 0
+;
+lim
+t
+!
+0
++
+@ u
+@ N
+i
+= 0
+signifying the complete dissolution of all memory dynamics and the disapp earance of
+the soul.
+In this framework, the soul is not an immutable ob ject but a recursive structure
+built on layered temp oral thresholds. Once all derivatives vanish, the recursive function
+b ecomes vwing for rebirth to o ccur with a new set of thresholds
+f
+˝
+0
+1
+; ˝
+0
+2
+; : : :
+g
+.
+Thus, this mo del captures the cyclic nature of cognition: from birth, through layered
+memory accumulation, to dissolution, and ˝nally to reincarnation.
+Time-Reversed Consciousness Mo del
+We de˝ne a recursive Heaviside-based mental p otential function as follows:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+  
+H
+N
+n
+(
+
+t
++
+˝
+n
+)
+  
+))
+(34)
+In this mo del, time ˛ows from
++
+1
+to
+
+, such that future events (e.g., death) o ccur
+at larger
+t
+, and past events (e.g., birth) o ccur at smaller
+t
+.
+‹
+˝
+1
+denotes the time of death.
+‹
+˝
+n
+denotes the time of birth.
+‹
+H
+N
+i
+is the smo othed Heaviside function with sharpness parameter
+N
+i
+.
+Mental Potential Pro˝le:
+The function
+u
+(
+t
+)
+satis˝es the following b ehavior:
+u
+(
+t
+) =
+8
+>
+>
+>
+>
+<
+>
+>
+>
+>
+:
+0
+; t < ˝
+1
+(Post-death: no consciousness)
+active
+; ˝
+1
+< t < ˝
+n
+(Lived p erio d)
+1
+; t > ˝
+n
+(Pre-birth: full p otential)
+Interpre tation:
+The presence of the leading 1 in Equation
+(34)
+is essential. It ensures
+that during the pre-birth state
+(
+t > ˝
+n
+)
+, the function evaluates to
+u
+(
+t
+) = 1
+, representing a
+latent but unstructured p otential.
+21
+
+
+However, since there is no p ointer (i.e., no
+˝
+i
+activated yet), no actual awareness or
+memory exists. This structural asymmetry prevents the pre-birth state from recalling the
+lived timeline, thereby enforcing **unidirectional memory ˛ow** (from the past to the
+present) even though time is mo deled in reverse.
+Thus, the subtraction from 1 plays a key role in **blo cking memory access from past
+to present**, while still preserving the mathematical structure for recursive recall during
+life.
+Why the Leading 1 Is Essential
+The presence of the leading 1 in the de˝nition of the recursive mental p otential function
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+  
+H
+N
+n
+(
+
+t
++
+˝
+n
+)
+  
+))
+is not plays a critical structural and philosophical role.
+Blo cking Backward Access:
+In this mo del, time ˛ows from
++
+1
+to
+
+, meaning
+that the most recent event (death at
+˝
+1
+) o ccurs ˝rst, and birth (
+˝
+n
+) o ccurs last in time.
+As such, the pre-birth state
+t > ˝
+n
+lies "in the future" of the recursive structure.
+Without the leading 1, the recursive Heaviside expression alone would evaluate to 0
+b efore the earliest threshold activimplying no p otential b efore birth. This would
+mistakenly suggest that the soul or identity sp ontaneously app ears from nothing.
+Instead, by de˝ning
+u
+(
+t
+) = 1
+
+Heaviside recursion
+, we enforce the following b ehavior:
+u
+(
+t
+) =
+8
+>
+>
+>
+>
+<
+>
+>
+>
+>
+:
+0
+; t < ˝
+1
+(p ost-death)
+active
+; ˝
+1
+< t < ˝
+n
+(lived exp erience)
+1
+; t > ˝
+n
+(pre-birth latent p otential)
+Preventing Past-to-Future Re call:
+This structure ensures that in the pre-birth state,
+although the full p otential
+u
+(
+t
+) = 1
+exists mathematically, the recursive structure has
+not yet activated. Since no
+˝
+i
+has "turned on" through Heaviside thresholds, there is no
+access to lived memory or conscious recall. The 1 thus creates a **mathematical presence
+without functional essential asymmetry that blo cks reverse memory ˛ow
+(past do es not rememb er the future).
+Irreversibility and Individuality:
+This asymmetry also aligns with the irreversibility
+of conscious life. Memories are built forward (from smaller
+t
+to larger
+t
+), but not
+backward. The subtraction from 1 intro duces this irreversibility, ensuring that each
+recursive instantiation de˝nes a unique temp oral and structural identitvertible
+and non-replicable.
+22
+
+
+In short, the leading 1 represents the default fullness of latent p otential, and the
+nested Heaviside sequence serves to subtract away that p otential as consciousness b ecomes
+constrained by lived thresholds. It is the core mechanism that enforces **directional
+memory, individuality, and birth-death asymmetry**.
+10 Recursive Mental Potential Mo del: Summary
+Core Equation
+We de˝ne the mental p otential function using a nested, recursive Heaviside structure:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+  
+H
+N
+n
+(
+
+t
++
+˝
+n
+)
+  
+))
+(35)
+Here,
+˝
+1
+is the time of death,
+˝
+n
+the time of birth, and
+N
+i
+the sharpness (emotional
+weight) of each memory layer. Time ˛ows in reverse: from
++
+1 ! 
+, so that death
+o ccurs ˝rst and birth o ccurs last in this temp oral mo del.
+Temp oral Interpretation
+u
+(
+t
+) =
+8
+>
+>
+>
+>
+<
+>
+>
+>
+>
+:
+0
+; t < ˝
+1
+(Post-death: no consciousness)
+active
+; ˝
+n
+< t < ˝
+1
+(Lived exp erience)
+1
+; t > ˝
+n
+(Pre-birth latent p otential)
+The subtraction from 1 is essential. It ensures that although the full p otential exists
+b efore birth (
+u
+(
+t
+) = 1
+), no memory or consciousness is accessible b ecause no threshold
+˝
+i
+has b een activated. This enforces unidirectional memory and identity irreversibility.
+Di˙erential Structure
+‹
+@ u=@ t
+: Sensitivity totention and awareness
+‹
+@ u=@ ˝
+i
+: Resp onsiveness to stored memory thresholds
+‹
+@
+2
+u=@ t@ ˝
+i
+: Dynamic mo dulation of recall
+‹
+@ u=@ N
+i
+: Emotional intensity or trauma sharpness
+Cognitive and Philosophical Insights
+‹
+Recursive Heaviside layers mo del layered memory, p erception, and forgetting.
+‹
+The mo del explains why pre-birth states contain full p otential but cannot access
+future (i.e., lived) memory.
+23
+
+
+‹
+Consciousness unfolds as threshold activation reduces the initial full p otential.
+‹
+The subtraction from 1 structurally prevents backward memory recall and enco des
+the directionality of life and memory.
+‹
+The non-invertibility of the nested delta pro ducts explains why consciousness is
+unique and non-replicable.
+Applications and Implications
+‹
+Neuroscience
+: Mo deling recursive ˝ring, trauma dynamics, and layered memory
+‹
+Clinical practice
+: Interpreting or mo dulating
+N
+i
+to addres s PTSD and trauma
+lo ops
+‹
+AI
+: Implementing recursive memory for introsp ective and individualized machine
+consciousness
+‹
+Philosophy
+: Grounding soul theory, free will, and identity through recursive
+irreversible structures
+11 Conclusion and Future Directions
+Key Conclusions
+‹
+Recursive architectures can represent b oth conscious transitions and unconscious
+pro cesses, including dreaming, forgetting, and emotional resonance.
+‹
+Derivatives with resp ect to time and cognitive thresholds reveal the layered structure
+of attention, memory formation, and a˙ective mo dulation.
+‹
+Pro ducts of Dirac delta functions arise naturally in this framework, yet remain
+mathematically non-invviding an explanation for the irreversibility and
+individuality of conscious structures.
+‹
+The sharpness parameter
+N
+i
+enco des emotional intensity and dynamically evolvverning
+the p ersistence of trauma and the reinforcement or fading of memories over time.
+‹
+Recursive identity structures form uniquely within each individual, o˙ering a struc-
+tural foundation for the non-replicability of conscious ness .
+24
+
+
+Future Directions
+‹
+Empirical validation through neural recordings and dynamical mo deling of recursive
+˝ring patterns consistent with derivative-based predictions.
+‹
+Clinical applications in trauma therapy by observing and mo dulating sharpness
+N
+i
+,
+particularly in the context of recursive reinforcement and residual activation lo ops.
+‹
+Development of AI systems that incorp orate recursive memory architectures for
+improved introsp ection, adaptability, and interpretability.
+‹
+Philosophical exploration of free will, agency, and individuality using recursive,
+self-referential di˙erential structures as foundational mo dels.
+Ultimately, the recursive Heaviside framework o˙ers not only a rigorous formalism for
+mo deling cognition but also a comp elling metaphor for the nature of mind itself:
+memory
+as strati˝ed layers of conditional potential, thought as a cascade of nested thresholds, and
+consciousness as a singular recursive trajectory through an irreducible mental topology
+.
+App endix A. Invertibility of the Recursive Heaviside
+Function
+Although the recursive Heaviside function
+u
+(
+t
+) = 1
+
+H
+(
+
+t
++
+˝
+1
+H
+(
+
+t
++
+˝
+2
+))
+app ears
+analyzable via its time and threshold derivatives, a fundamental issue aris es . The formal
+derivatives of this function yield terms such as:
+@ u
+@ t
+=
+
+(
+
+t
++
+˝
+1
+H
+(
+
+t
++
+˝
+2
+))
+
+(
+
+1
+
+˝
+1
+
+(
+
+t
++
+˝
+2
+))
+(A.1)
+This expression contains pro ducts of delta functions, such as
+
+(
+t
+
+˝
+1
+)
+
+
+(
+t
+
+˝
+2
+)
+, which
+lie outside the space of well-de˝ned distributions. According to Schwartz's theory of
+distributions, such pro ducts are unde˝ned in the general cas e.
+As a result, the information enco ded in higher-order interactions within the recursive
+structure cannot b e extracted or inverted through classical analysis. No matter how
+precisely one measures all p ossible derivatives of
+u
+(
+t
+)
+, the original recursive nesting cannot
+b e uniquely reconstructed.
+To illustrate this, consider the two functions:
+u
+1
+(
+t
+) = 1
+
+H
+(
+
+t
++ 1
+
+H
+(
+
+t
++ 2))
+u
+2
+(
+t
+) = 1
+
+H
+(
+
+t
++ 2
+
+H
+(
+
+t
++ 1))
+(A.2)
+Both functions exhibit similar jump b ehavior, yet their derivatives diverge:
+25
+
+
+@ u
+1
+@ t
+=
+
+
+(
+t
+
+1)
+;
+@ u
+2
+@ t
+= 0
+(A.3)
+Despite visual similarity, these functions enco de fundamentally di˙erent recursive
+structures. Their distinct internal architectures are invisible to the time derivative alone.
+This con˝rms that the recursive con˝guration is hidden from external observation, and
+that the original function cannot b e recovered from temp oral b ehavior alone.
+This provides a mathematically grounded insight into cognition: even with access
+to all observable derivatives, the inner logic of recursive thought remains irreducible.
+This irreducibility supp orts the conclusion that consciousness is structurally unique and
+
+a mind cannot b e p erf ectly copied or reconstructed
+.
+App endix B. Time Derivative and Residual Terms in
+the 3-Laye r Re cursive Heaviside Function
+We now examine the time derivative of a recursive function comp osed of three nested
+Heaviside step functions with ˝nite sharpness parameters
+N
+1
+; N
+2
+; N
+3
+. The recursive
+function is given by:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+
+t
++
+˝
+3
+)))
+(B.1)
+De˝ne intermediate variables:
+A
+=
+
+t
++
+˝
+1
+H
+N
+2
+(
+B
+)
+; B
+=
+
+t
++
+˝
+2
+H
+N
+3
+(
+C
+)
+; C
+=
+
+t
++
+˝
+3
+The full time derivative of
+u
+(
+t
+)
+then takes the form:
+@ u
+@ t
+=
+
+
+N
+1
+(
+A
+)
+
+˝
+1
+
+N
+1
+(
+A
+)
+
+N
+2
+(
+B
+)
+
+˝
+1
+˝
+2
+
+N
+1
+(
+A
+)
+
+N
+2
+(
+B
+)
+
+N
+3
+(
+C
+)
+(B.2)
+Among these, only the ˝nal term corresp onds to fully resolved cognitive causality:
+Fully cancelled term:
+
+˝
+1
+˝
+2
+
+N
+1
+(
+A
+)
+
+N
+2
+(
+B
+)
+
+N
+3
+(
+C
+)
+(B.3)
+However, when the s harpness parameters
+N
+i
+are ˝nite, the Heaviside approxima-
+tions
+H
+N
+i
+do not yield p erfect binary steps. As a result,
+residual terms
+remain in the
+derivativting incomplete logical cancellation. These residuals are given by:
+Residual terms
+=
+˝
+2
+
+N
+2
+(
+B
+)
+
+N
+3
+(
+C
+) +
+
+N
+1
+(
+A
+) (1
+
+H
+N
+2
+(
+B
+)) +
+˝
+1
+
+N
+1
+(
+A
+)
+
+N
+2
+(
+B
+) (1
+
+H
+N
+3
+(
+C
+))
+(B.4)
+These remaining terms may b e interpreted as mathematical representations of sub-
+26
+
+
+conscious pro cessing, unresolved lo ops, or dreaming. In the idealized limit
+N
+i
+! 1
+,
+all residuals vanis h, and only the fully cancelled term surviv p erfect causal
+cognition.
+App endix C. Derivatives of the Recursive Heaviside
+Function
+We consider the
+n
+-layer recursive Heaviside function de˝ned as:
+u
+(
+t
+) = 1
+
+H
+N
+1
+(
+
+t
++
+˝
+1
+H
+N
+2
+(
+
+t
++
+˝
+2
+H
+N
+3
+(
+  
+H
+N
+n
+(
+
+t
++
+˝
+n
+))))
+(C.1)
+The intermediate arguments
+A
+i
+are de˝ned recurs ively as:
+A
+n
+=
+
+t
++
+˝
+n
+A
+k
+=
+
+t
++
+˝
+k
+H
+N
+k
++1
+(
+A
+k
++1
+)
+;
+for
+k
+=
+n
+
+1
+; n
+
+2
+; : : : ;
+1
+(C.2)
+Time Derivative
+@ u=@ t
+The time derivative of
+u
+(
+t
+)
+is expressed as:
+@ u
+@ t
+=
+
+
+N
+1
+(
+A
+1
+)
+
+n
+Y
+k
+=2
+(1 +
+˝
+k
+
+1
+
+N
+k
+(
+A
+k
+))
+(C.3)
+Expanded explicitly:
+@ u
+@ t
+=
+
+
+N
+1
+(
+A
+1
+)
+
+(1 +
+˝
+1
+
+N
+2
+(
+A
+2
+))
+
+(1 +
+˝
+2
+
+N
+3
+(
+A
+3
+))
+  
+(1 +
+˝
+n
+
+1
+
+N
+n
+(
+A
+n
+))
+(C.4)
+Partial Derivatives with Resp ect to
+˝
+i
+For
+i < n
+, the derivative of
+u
+(
+t
+)
+with resp ect to
+˝
+i
+is:
+@ u
+@ ˝
+i
+=
+ 
+i
+
+1
+Y
+k
+=1
+˝
+k
+
+N
+k
++1
+(
+A
+k
++1
+)
+!
+
+H
+N
+i
++1
+(
+A
+i
++1
+)
+
+
+N
+1
+(
+A
+1
+)
+(C.5)
+For the deep est layer
+i
+=
+n
+, we have:
+@ u
+@ ˝
+n
+=
+ 
+n
+
+1
+Y
+k
+=1
+˝
+k
+
+N
+k
++1
+(
+A
+k
++1
+)
+!
+
+
+N
+n
+(
+A
+n
+)
+
+
+N
+1
+(
+A
+1
+)
+(C.6)
+Note:
+
+N
+i
+(
+x
+) =
+d
+dx
+H
+N
+i
+(
+x
+)
+denotes the smo othed Dirac delta function asso ciated with
+sharpness
+N
+i
+. As
+N
+i
+! 1
+,
+
+N
+i
+(
+x
+)
+!
+
+(
+x
+)
+, the ideal Dirac delta.
+27
+
+
+Partial Derivative with Resp ect to
+N
+i
+The derivative of
+u
+(
+t
+)
+with resp ect to the sharpness parameter
+N
+i
+(for
+2
+
+i
+
+n
+) is given
+by:
+@ u
+@ N
+i
+=
+ 
+i
+
+1
+Y
+k
+=1
+˝
+k
+
+N
+k
++1
+(
+A
+k
++1
+)
+!
+
+@ H
+N
+i
+(
+A
+i
+)
+@ N
+i
+(C.7)
+For the ˝rst layer
+i
+= 1
+, we have:
+@ u
+@ N
+1
+=
+
+@ H
+N
+1
+(
+A
+1
+)
+@ N
+1
+(C.8)
+Let
+x
+i
+(
+t
+) =
+
+t
++
+˝
+i
+H
+N
+i
++1
+(
+
+t
++
+˝
+i
++1
+)
+Then, the sharpness derivative is given by:
+@ H
+N
+i
+@ N
+i
+=
+2
+x
+i
+(
+t
+)
+
+exp(
+
+2
+N
+i
+x
+i
+(
+t
+))
+(1 + exp(
+
+2
+N
+i
+x
+i
+(
+t
+)))
+2
+(C.9)
+Interpretation:
+This derivative quanti˝es how changes in the sharpness parameter
+N
+i
+in˛uence the s teepness of the Heaviside transition. In the limit
+N
+i
+! 1
+, the sigmoid
+approaches a step function, and this sensitivity vanishes almost everywhere. However, for
+mo derate
+N
+i
+, the in˛uence b ecomes prominent esp ecially when time moves toward earlier
+events
+(
+t
+! 
+)
+, leading to an ampli˝cation e˙ect in the deep memory region.
+App endix D. Invertibility Example: 2-Layer Recursive
+Heaviside Function
+To illustrate the challenge of invertibility in recursive Heaviside s tructures, consider a
+simple 2-layer function evaluated at
+t
+= 1
+:
+u
+(1) = 1
+
+H
+(
+
+1 +
+˝
+1
+H
+(
+
+1 +
+˝
+2
+))
+(D.1)
+This function dep ends on two threshold parameters,
+˝
+1
+and
+˝
+2
+, and exhibits discontin-
+uous b ehavior due to the nested Heaviside terms.
+Let us de˝ne intermediate variables for clarity:
+A
+=
+
+1 +
+˝
+1
+H
+(
+B
+)
+; B
+=
+
+1 +
+˝
+2
+28
+
+
+Then the formal derivatives of
+u
+(1)
+with resp ect to the thresholds are:
+@ u
+@ ˝
+1
+=
+
+
+(
+A
+)
+
+H
+(
+B
+)
+(D.2)
+@ u
+@ ˝
+2
+=
+
+
+(
+A
+)
+
+˝
+1
+
+
+(
+B
+)
+(D.3)
+These expressions involve Dirac delta functions. Notably, the second derivative contains
+a pro duct of delta functions,
+
+(
+A
+)
+
+
+(
+B
+)
+, which is unde˝ned in the framework of classical
+distribution theory.
+Implication.
+Even in this minimal 2-layer con˝guration, the output
+u
+(1)
+is not a
+bijective function of
+˝
+1
+and
+˝
+2
+. Multiple parameter combinations can yield identical
+outputs. Moreover, the ill-de˝ned nature of higher-order derivatives (such as
+
+(
+A
+)
+
+
+(
+B
+)
+)
+highlights the fundamental limitations of analytic inversion.
+Conclusion.
+Recursive Heaviside functions exhibit structural non-invertibility. The
+nesting of discontinuities prevents smo oth recons truction of internal parameters from
+outputs or derivative information. This supp orts the broader thesis that
+recursive cognitive
+architectures are inherently non-invertible
+.
+29
+
+
+References
+[1] Shin, C. (2014). Unresolvable Human Mental State Based on the Parallel Universe
+Theory. arXiv preprint arXiv:1403.7614.
+[2] Shin, C. (2016). Recursive Heaviside Step Functions and the Beginning of the
+Universe. New Astronomy, 45, 7377.
+[3] Shin, C. (2016). Go d Before the Big Bang. International Education & Research
+Journal, 2(10), 6870.
+[4] Shin, C. (2017). I ntro ducing a Function with Plural Derivatives. Journal of Applied
+Mathematics and Physics, 5, 21752184.
+30
+
+
+
+</pre>
+
+</body>
+</html>
